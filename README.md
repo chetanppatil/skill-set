@@ -4,6 +4,7 @@ Add Skill, Get Skills, Update Skill/Status
 
 ### Introduction
 Provides functionality to perform skill operations.
+
 Database used: **MySQL**
 
 Follow below steps to run this project on any enviroment:
