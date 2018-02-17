@@ -17,6 +17,10 @@ Follow below steps to run this project on any enviroment:
   npm install
   ```
 - Open **db.json** file from config folder & update user and password with your MySQL credentials.
+- After all configuration run your application with following command
+  ```
+  npm run
+  ```
 - Create database **skill-set** with following command
   ```
   CREATE DATABASE skill-set;
