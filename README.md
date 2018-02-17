@@ -4,19 +4,19 @@ Add Skill, Get Skills, Update Skill/Status
 
 ### Introduction
 Provides functionality to perform skill operations.
-Database used: MySQL
+Database used: **MySQL**
 
 Follow below steps to run this project on any enviroment:
 - Clone this repository in your system with following command
   ```
   git clone https://github.com/Chetan07j/skill-set.git
   ```
-- All dependencies are added in ** package.json ** , install it with following command
+- All dependencies are added in **package.json** , install it with following command
   ```
   npm install
   ```
-- Open ** db.json ** file from config folder & update user and password with your MySQL credentials.
-- Create database ** skill-set ** with following command
+- Open **db.json** file from config folder & update user and password with your MySQL credentials.
+- Create database **skill-set** with following command
   ```
   CREATE DATABASE skill-set;
   ```
