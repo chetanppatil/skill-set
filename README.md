@@ -71,11 +71,11 @@ Follow below steps to run this project on any enviroment:
 ### API Details
 List & cURL of APIs is as following:
 
-1. ping- To check application is running or not.
+- **ping** (To check application is running or not)
   ```
   curl -X GET http://localhost:3000/skill-set/api/ping
   ```
-2. Add Skill
+- **Add Skill**
   ```
   curl -X POST \
   http://localhost:3000/skill-set/api/skills \
@@ -85,11 +85,11 @@ List & cURL of APIs is as following:
   	"status": 1
   }'
   ```
-3. Get Skills (Skill Search)
+- **Get Skills** (Skill Search)
   ```
   curl -X GET http://localhost:3000/skill-set/api/skills
   ```
-4. Edit Skill `1 in this cURL refers to skill id`
+- **Edit Skill** `1 in this cURL refers to skill id`
   ```
   curl -X PUT \
   http://localhost:3000/skill-set/api/skills/1/update \
@@ -98,7 +98,7 @@ List & cURL of APIs is as following:
   	"name": "New Name"
   }'
   ```
-5. Change Status `1 in this cURL refers to skill id`
+- **Change Status** `1 in this cURL refers to skill id`
   ```
   curl -X PUT \
   http://localhost:3000/skill-set/api/skills/1/approve \
