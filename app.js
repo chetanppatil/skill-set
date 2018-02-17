@@ -34,9 +34,9 @@ app.get(BASE_URL + '/ping', (req, res) => {
 
 /* SKILL SET APIs */
 app.post(BASE_URL + '/skills', require('./api/controllers/addSkill').start);
-// app.post(BASE_URL + '/placeOrder', require('./api/controllers/placeOrder').placeOrder);
-// app.post(BASE_URL + '/predictValue', require('./api/controllers/predictValue').predictValue);
-// app.post(BASE_URL + '/orderStatus', require('./api/controllers/orderStatus').orderStatus);
+app.get(BASE_URL + '/skills', require('./api/controllers/getSkills').start);
+app.put(BASE_URL + '/skills/:id/update', require('./api/controllers/updateSkill').start);
+app.put(BASE_URL + '/skills/:id/approve', require('./api/controllers/updateStatus').start);
 
 app.use((err, req, res, next) => {
   console.log('-----Something broke!---', err);
