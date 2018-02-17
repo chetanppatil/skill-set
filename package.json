@@ -1,0 +1,22 @@
+{
+  "name": "skill-set",
+  "version": "1.0.0",
+  "description": "Skill Management",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chetan07j/skill-set.git"
+  },
+  "keywords": [
+    "skill"
+  ],
+  "author": "chetan0779@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chetan07j/skill-set/issues"
+  },
+  "homepage": "https://github.com/Chetan07j/skill-set#readme"
+}
