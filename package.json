@@ -4,6 +4,7 @@
   "description": "Skill Management",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/Chetan07j/skill-set/issues"
   },
-  "homepage": "https://github.com/Chetan07j/skill-set#readme"
+  "homepage": "https://github.com/Chetan07j/skill-set#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "q": "^1.5.1",
+    "underscore": "^1.8.3"
+  }
 }
