@@ -25,12 +25,16 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+app.use(express.static(__dirname + '/public/ui'));
 
 /* PING FOR TESTING API STATUS */
 app.get(BASE_URL + '/ping', (req, res) => {
   res.status(200).send("Pong");
 });
 
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/public/ui/index.html');
+});
 
 /* SKILL SET APIs */
 app.post(BASE_URL + '/skills', require('./api/controllers/addSkill').start);
