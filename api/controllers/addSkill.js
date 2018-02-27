@@ -35,11 +35,11 @@ let validateInput = (inp) => {
       code: "ERR001",
       error: "Skill name is required."
     });
-  } else if (!inp.status && inp.status !== 0) {
-    deferred.reject({
-      code: "ERR002",
-      error: "Status is required."
-    });
+  // } else if (!inp.status && inp.status !== 0) {
+  //   deferred.reject({
+  //     code: "ERR002",
+  //     error: "Status is required."
+  //   });
   } else if (inp.status && inp.status !== 0 && inp.status !== 1) {
     deferred.reject({
       code: "ERR003",

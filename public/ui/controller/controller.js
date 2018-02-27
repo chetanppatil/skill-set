@@ -8,42 +8,74 @@ app.controller('testController', function($scope, $http) {
 		"status": null
 	};
 
-	$http.get('/skill-set/api/skills')
-		.then(function(res) {
+	$scope.getSkills = function(){
+		$http.get('/skill-set/api/skills')
+			.then(function(res) {
 
-      console.log('data', res.data);
-			// $scope.skillList = res.data;
-		})
-    .catch(function(err){
-      console.log('ERR::', err);
-    });
+	      console.log('data', res.data);
+				$scope.skillList = res.data;
+			})
+	    .catch(function(err){
+	      // console.log('ERR::', err.data);
+				$scope.errMsg = err.data.error ? err.data.error : 'Something went wrong!'
+	    });
+	};
+
+	$scope.getSkills();
 
 	// var localData = localStorage.getItem('data');
 	// $scope.skillList.push(JSON.parse(localData))
 
 	$scope.addSkill = function() {
 
-		$scope.addSkills.id = $scope.skillList.length + 1;
-		$scope.skillList.push($scope.addSkills)
-		localStorage.setItem('data', JSON.stringify($scope.addSkills))
-		$scope.addSkills = {}
+		// $scope.addSkills.id = $scope.skillList.length + 1;
+		// $scope.skillList.push($scope.addSkills)
+		// localStorage.setItem('data', JSON.stringify($scope.addSkills))
+		// $scope.addSkills = {};
+		console.log('2222', $scope.addSkills);
+		var stat = ($scope.addSkills.status == true) ? 1 : (($scope.addSkills.status) == false ? 0 : null);
+		$http
+     .post('/skill-set/api/skills', { name: $scope.addSkills.name, status: stat })
+     .then(function(res) {
+       // console.log('1111', res.data);
+			 $scope.getSkills();
+			 alert(res.data.msg);
+     })
+		 .catch(function(err){
+			 // console.log('err', err.data);
+			 alert(err.data.error ? err.data.error : 'Some error occured!');
+		 });
 	}
 
 	$scope.changeSkill = function(obj) {
-		var a = $scope.skillList.indexOf(obj);
-		$scope.skillList[a] = {
-			"id": obj.id,
-			"name": obj.name,
-			"status": obj.status
-		}
+		// $scope.data = $scope.skillList[index];
+		// console.log('22333', obj);
+    $http
+      .put('/skill-set/api/skills/'+ obj.id +'/update', { name: obj.name })
+      .then(function(res) {
+				// console.log('4444', res.data);
+				$scope.openEdit = false;
+				$scope.getSkills();
+        alert(res.data.msg);
+      })
+			.catch(function(err){
+ 			 // console.log('err', err.data);
+ 			 alert(err.data.error ? err.data.error : 'Some error occured!');
+ 		 });
 
-		$scope.openEdit = false;
-		localStorage.setItem('data', JSON.stringify(obj))
 
 	}
 
-	$scope.changeStatus = function(obj) {
-		alert("Your skill is " + obj)
+	$scope.changeStatus = function(obj, status) {
+		// console.log('dddd', index, status);
+		$http
+      .put('/skill-set/api/skills/'+ obj.id +'/approve', { status: status })
+      .then(function(res) {
+      	console.log('STAT--', res.data);
+      })
+			.catch(function(err){
+				alert(err.data.error ? err.data.error : 'Some error occured!');
+			});
 	}
 })
 

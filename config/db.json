@@ -1,6 +1,6 @@
 {
   "host": "localhost",
-  "user": "<user-name>",
-  "password": "<password>",
-  "database": "skill-set"
+  "user": "root",
+  "password": "1234",
+  "database": "skillset"
 }

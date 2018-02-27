@@ -58,14 +58,17 @@
         <span class="glyphicon glyphicon-pencil" ng-show="open" ng-click="openEdit = true"></span>
        </div>
       </td>
-      <td class="text-right col-md-3" ng-class="{'text-green': list.status == true}" ng-click="changeStatus('approved'); list.status = true">
+      <td class="text-right col-md-3" ng-class="{'text-green': list.status == true}" ng-click="changeStatus(list, 1); list.status = true">
        <span class="glyphicon glyphicon-ok"></span> Approve
       </td>
-      <td class="text-right col-md-3" ng-class="{'text-danger': list.status == false}" ng-click="changeStatus('rejected');list.status = false">
+      <td class="text-right col-md-3" ng-class="{'text-danger': list.status == false}" ng-click="changeStatus(list, 0);list.status = false">
        <span class="glyphicon glyphicon-remove"></span> Reject
       </td>
      </tr>
     </table>
+    <p ng-if="errMsg">
+      {{ errMsg }}
+    </p>
    </div>
   </div>
  </div>

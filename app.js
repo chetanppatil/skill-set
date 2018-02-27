@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use(express.static(__dirname + '/public/ui'));
+app.use(express.static(__dirname + '/public'));
 
 /* PING FOR TESTING API STATUS */
 app.get(BASE_URL + '/ping', (req, res) => {

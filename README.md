@@ -19,23 +19,23 @@ Follow below steps to run this project on any enviroment:
 - Open **db.json** file from config folder & update user and password with your MySQL credentials.
 - After all configuration run your application with following command
   ```
-  npm run
+  npm start
   ```
 - Create database **skill-set** with following command
   ```
-  CREATE DATABASE skill-set;
+  CREATE DATABASE skillset;
   ```
 - Select created DB and execute following statement to create required table
   ```
   CREATE TABLE mstSkills (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
-    status BIT
+    status TINYINT
   );
   ```
 - Execute following script to create addSkill function
   ```
-  CREATE drop FUNCTION addSkill ( skillName varchar(30), skillStatus BIT )
+  CREATE FUNCTION addSkill ( skillName varchar(30), skillStatus BIT )
   RETURNS varchar(20)
   BEGIN
      DECLARE varOut varchar(20);
@@ -111,3 +111,5 @@ List & cURL of APIs is as following:
   	"status": 1
   }'
   ```
+### Browse Your Application
+http://localhost:3000
