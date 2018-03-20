@@ -21,16 +21,16 @@ Follow below steps to run this project on any enviroment:
   ```shell
   npm run
   ```
-- Create database **skill-set** with following command
+- Create database **skillset** with following command
   ```sql
-  CREATE DATABASE skill-set;
+  CREATE DATABASE skillset;
   ```
 - Select created DB and execute following statement to create required table
   ```sql
   CREATE TABLE mstSkills (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
-    status BIT
+    status TINYINT
   );
   ```
 - Execute following script to create addSkill function
@@ -111,3 +111,5 @@ List & cURL of APIs is as following:
   	"status": 1
   }'
   ```
+### Browse Your Application
+http://localhost:3000

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testApp">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title> Test Example </title>
+
+ <link rel="stylesheet" href="ui/lib/bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet" href="ui/css/style.min.css">
+
+ <!-- librarys -->
+ <script type="text/javascript" src="ui/lib/Jquery/jquery.min.js"></script>
+ <script type="text/javascript" src="ui/lib/bootstrap/js/bootstrap.min.js"></script>
+ <script type="text/javascript" src="ui/lib/angular/angular.min.js"></script>
+ <script type="text/javascript" src="ui/lib/ngStorage/ngStorage.min.js"></script>
+
+ <!-- scripts -->
+ <script type="text/javascript" src="ui/controller/application.js"></script>
+ <script type="text/javascript" src="ui/controller/controller.js"></script>
+</head>
+
+<body ng-controller="testController">
+  <div ng-include="'ui/views/page.html'">
+
+  </div>
+</body>
+
+</html>
